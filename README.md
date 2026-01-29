@@ -10,18 +10,23 @@ A high-performance Model Context Protocol (MCP) server for controlling Google Co
 
 ## Quick Start (No Install)
 
-You can run this MCP server directly from the GitHub release using Bun:
+You can run this MCP server directly using Bun:
 
 ```bash
-bun run https://github.com/DevAdalat/colab-mcp/releases/download/v1.0.0/colab-bridge.js
+bun https://github.com/DevAdalat/colab-mcp/releases/download/v1.0.0/colab-bridge.js
 ```
 
 ## Adding to MCP Agents (Claude Desktop, etc.)
 
-To add this to your agent configuration, use the following setup:
+For a stable setup, it is recommended to download the file locally:
 
-### Claude Desktop
-Add this to your `claude_desktop_config.json`:
+1. **Download the binary/script:**
+   ```bash
+   curl -LO https://github.com/DevAdalat/colab-mcp/releases/download/v1.0.0/colab-bridge.js
+   ```
+
+2. **Add to Claude Desktop:**
+   Update your `claude_desktop_config.json` (usually at `~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
 
 ```json
 {
@@ -29,8 +34,7 @@ Add this to your `claude_desktop_config.json`:
     "colab-bridge": {
       "command": "bun",
       "args": [
-        "run",
-        "https://github.com/DevAdalat/colab-mcp/releases/download/v1.0.0/colab-bridge.js"
+        "/absolute/path/to/colab-bridge.js"
       ]
     }
   }
